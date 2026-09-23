@@ -1,0 +1,314 @@
+name: Midnight Vault — CI Compilation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  compile-vault-contract:
+    name: Compile Vault.compact (Ubuntu / genuine Compact 0.31.1)
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Install system libraries required by compactc ────────────────
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            curl \
+            libssl-dev \
+            libgmp-dev \
+            pkg-config \
+            jq \
+            file \
+            unzip \
+            tar \
+            ca-certificates
+
+      # ── 3. Install official Compact toolchain ────────────────────
+      - name: Install Compact toolchain
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPACT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "=== Downloading Compact toolchain installer ==="
+          curl --proto '=https' --tlsv1.2 -LsSf \
+            https://github.com/midnightntwrk/compact/releases/latest/download/compact-installer.sh \
+            -o /tmp/compact-installer.sh
+
+          echo "=== Running installer ==="
+          sh /tmp/compact-installer.sh
+
+          echo "=== Adding ~/.local/bin and ~/.compact/bin to PATH ==="
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          echo "$HOME/.compact/bin" >> $GITHUB_PATH
+
+      # ── 4. Setup Compact compiler and verify ────────────────────
+      - name: Setup Compact compiler and verify
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPACT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export PATH="$HOME/.local/bin:$HOME/.compact/bin:$PATH"
+
+          echo "=== Updating Compact compiler to default/0.31.1 ==="
+          compact update 0.31.1 || compact update
+
+          echo ""
+          echo "=== Compact compiler binary location ==="
+          which compact || (echo "FATAL: compact not found in PATH after install" && exit 1)
+
+          echo ""
+          echo "=== Compact CLI version ==="
+          compact --version
+
+          echo ""
+          echo "=== Compact compiler version ==="
+          compact compile --version
+
+          echo ""
+          echo "=== compact list installed ==="
+          compact list --installed || true
+
+      # ── 5. Compile Vault.compact ─────────────────────────────────────────
+      - name: Compile contracts/Vault.compact
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMPACT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export PATH="$HOME/.local/bin:$HOME/.compact/bin:$PATH"
+          echo ""
+          echo "=== Preparing output directory ==="
+          mkdir -p contracts/managed/Vault
+
+          echo ""
+          echo "=== CONTRACT SOURCE ==="
+          echo "File: contracts/Vault.compact"
+          echo "Language pragma:"
+          grep "pragma language_version" contracts/Vault.compact
+
+          echo ""
+          echo "=== COMPILE COMMAND ==="
+          echo "compact compile contracts/Vault.compact contracts/managed/Vault"
+          echo ""
+
+          # Run the real compilation — CI FAILS if this fails
+          compact compile contracts/Vault.compact contracts/managed/Vault
+
+          echo ""
+          echo "=== Compilation complete ==="
+
+      # ── 6. Install root dependencies (for Node verification script) ───────
+      - name: Install dependencies
+        run: npm install
+
+      # ── 7. Verify generated output ───────────────────────────────────────
+      - name: Verify generated Vault artifacts
+        run: |
+          echo ""
+          echo "=== GENERATED DIRECTORY STRUCTURE ==="
+          find contracts/managed/Vault -type f | sort
+
+          echo ""
+          echo "=== ARTIFACT SIZES ==="
+          find contracts/managed/Vault -type f -exec wc -c {} +
+
+          # ── Locate runtime contract file (index.js or index.cjs) ──────────
+          CONTRACT_JS=$(find contracts/managed/Vault/contract -name "index.js" -o -name "index.cjs" 2>/dev/null | head -n 1)
+          if [ -z "$CONTRACT_JS" ] || [ ! -s "$CONTRACT_JS" ]; then
+            echo "FAIL: No contract runtime (index.js or index.cjs) generated!"
+            exit 1
+          fi
+          echo ""
+          echo "=== CONTRACT RUNTIME FILE: $CONTRACT_JS ==="
+
+          # ── Verify compact-runtime version requirement ─────────────────────
+          echo ""
+          echo "=== compact-runtime version requirement ==="
+          grep -o "checkRuntimeVersion('[^']*')" "$CONTRACT_JS" || \
+          grep -o 'checkRuntimeVersion("[^"]*")' "$CONTRACT_JS" || \
+          echo "NOTE: checkRuntimeVersion not found as a string literal (may be minified)"
+
+          # ── Verify Contract export is a function/class ─────────────────────
+          echo ""
+          echo "=== Verifying Contract export ==="
+          node --input-type=module << 'EOF'
+          import { readFileSync } from 'fs';
+          import { execSync } from 'child_process';
+          import { createRequire } from 'module';
+
+          const contractDir = 'contracts/managed/Vault/contract';
+          const jsFile = (() => {
+            try { execSync(`test -f ${contractDir}/index.js`); return `${contractDir}/index.js`; } catch {}
+            try { execSync(`test -f ${contractDir}/index.cjs`); return `${contractDir}/index.cjs`; } catch {}
+            return null;
+          })();
+
+          if (!jsFile) {
+            console.error('FAIL: No contract runtime file found!');
+            process.exit(1);
+          }
+
+          console.log(`Loading contract from: ${jsFile}`);
+          const require = createRequire(import.meta.url);
+          let mod;
+          try {
+            mod = require('./' + jsFile);
+          } catch (e) {
+            // try ESM dynamic import for .js files
+            mod = await import('./' + jsFile);
+          }
+
+          const Contract = mod.Contract;
+          console.log(`Contract export exists: ${!!Contract}`);
+          console.log(`typeof Contract: ${typeof Contract}`);
+
+          if (typeof Contract !== 'function') {
+            console.error('FAIL: Contract is not a constructor/class!');
+            process.exit(1);
+          }
+          console.log('SUCCESS: Contract is a valid constructor/class');
+          EOF
+
+          # ── Verify circuit names ──────────────────────────────────────────
+          echo ""
+          echo "=== Verifying required Vault circuits are present ==="
+          REQUIRED_CIRCUITS="authorizeIssuer issueCredential verifyCredential revokeCredential"
+          MISSING=""
+
+          for CIRCUIT in $REQUIRED_CIRCUITS; do
+            if grep -r "$CIRCUIT" contracts/managed/Vault/ > /dev/null 2>&1; then
+              echo "  ✓ $CIRCUIT — found in generated artifacts"
+            else
+              echo "  ✗ $CIRCUIT — MISSING from generated artifacts"
+              MISSING="$MISSING $CIRCUIT"
+            fi
+          done
+
+          if [ -n "$MISSING" ]; then
+            echo ""
+            echo "FAIL: The following required circuits are missing:$MISSING"
+            echo "The compiled contract does NOT correspond to Vault.compact."
+            exit 1
+          fi
+
+          echo ""
+          echo "All required Vault circuits verified in generated output."
+
+          # ── Verify proving keys ───────────────────────────────────────────
+          echo ""
+          echo "=== Verifying proving keys (PK) ==="
+          PK_COUNT=$(find contracts/managed/Vault/keys -name "*.pk" -o -name "*.prover" 2>/dev/null | wc -l)
+          if [ "$PK_COUNT" -eq 0 ]; then
+            echo "FAIL: No proving key (.pk or .prover) files generated!"
+            exit 1
+          fi
+          find contracts/managed/Vault/keys -name "*.pk" -o -name "*.prover" 2>/dev/null | \
+            xargs -I{} sh -c 'echo "  PK: {} — $(wc -c < {}) bytes"'
+
+          # ── Verify verification keys ──────────────────────────────────────
+          echo ""
+          echo "=== Verifying verification keys (VK) ==="
+          VK_COUNT=$(find contracts/managed/Vault/keys -name "*.vk" -o -name "*.verifier" 2>/dev/null | wc -l)
+          if [ "$VK_COUNT" -eq 0 ]; then
+            echo "FAIL: No verification key (.vk or .verifier) files generated!"
+            exit 1
+          fi
+          find contracts/managed/Vault/keys -name "*.vk" -o -name "*.verifier" 2>/dev/null | \
+            xargs -I{} sh -c 'echo "  VK: {} — $(wc -c < {}) bytes"'
+
+          # ── Verify ZKIR ───────────────────────────────────────────────────
+          echo ""
+          echo "=== Verifying ZKIR files ==="
+          ZKIR_COUNT=$(find contracts/managed/Vault/zkir -name "*.zkir" -o -name "*.bzkir" 2>/dev/null | wc -l)
+          if [ "$ZKIR_COUNT" -eq 0 ]; then
+            echo "FAIL: No ZKIR (.zkir or .bzkir) files generated!"
+            exit 1
+          fi
+          find contracts/managed/Vault/zkir -name "*.zkir" -o -name "*.bzkir" 2>/dev/null | \
+            xargs -I{} sh -c 'echo "  ZKIR: {} — $(wc -c < {}) bytes"'
+
+          echo ""
+          echo "=== ALL VAULT ARTIFACT VERIFICATION CHECKS PASSED ==="
+
+      # ── 7. Confirm this is NOT the old Membership artifact ───────────────
+      - name: Confirm generated output is NOT the legacy Membership contract
+        run: |
+          echo ""
+          echo "=== Anti-regression check: verifying output is Vault, not Membership ==="
+
+          # The Vault contract must NOT contain registerMember (old Membership circuit)
+          if grep -r "registerMember" contracts/managed/Vault/ > /dev/null 2>&1; then
+            echo "FAIL: Generated output contains 'registerMember' — this appears to be the old Membership contract, not Vault!"
+            exit 1
+          fi
+
+          echo "  ✓ No legacy Membership circuit found in Vault artifacts."
+          echo ""
+          echo "=== Anti-regression check PASSED ==="
+
+      # ── 8. Upload authentic compiled artifacts ───────────────────────────
+      - name: Upload compiled Vault artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-vault-artifacts
+          path: contracts/managed/Vault/
+          if-no-files-found: error
+
+      # ── 9. Print final summary ───────────────────────────────────────────
+      - name: Print compilation summary
+        run: |
+          echo ""
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║          MIDNIGHT VAULT — D2 COMPILATION COMPLETE           ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+          echo ""
+          echo "  Compiler version:"
+          compact --version
+          echo ""
+          echo "  Source contract: contracts/Vault.compact"
+          echo "  Generated artifacts: contracts/managed/Vault/"
+          echo ""
+          echo "  Files generated:"
+          find contracts/managed/Vault -type f | sort | while read f; do
+            echo "    $f — $(wc -c < "$f") bytes"
+          done
+          echo ""
+          echo "  Circuits verified: authorizeIssuer issueCredential verifyCredential revokeCredential"
+          echo ""
+          echo "  Artifact upload: compiled-vault-artifacts (see Actions > Artifacts)"
+          echo ""
+
+  build-and-test:
+    name: Build & Test (Node.js 20)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Root Dependencies
+        run: npm install
+
+      - name: Run Unit Tests
+        run: npm test
+
+      - name: Install Frontend Dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Build Frontend Application
+        working-directory: frontend
+        run: npm run build
+
