@@ -10,9 +10,6 @@ import { getIssuerId, getUserId, getCredentialCommitment } from '@/lib/credentia
 import { toHex, fromHex } from '@/lib/hex-utils';
 import { Shield, Orbit, Lock, Sparkles, ExternalLink, Copy, CheckCircle, RefreshCw, Key, ShieldCheck, XCircle, MessageSquare } from 'lucide-react';
 
-// Mandatory Level 5 & Level 6 User Feedback Tracker (Google Sheet format)
-const FEEDBACK_URL = 'https://docs.google.com/spreadsheets/d/16XIENbP254GiD5WdvLvrPDdfKkb8Q_tTMwdHzKhGYVI/edit?usp=sharing';
-
 const to32Bytes = (text: string): Uint8Array => {
   const arr = new Uint8Array(32);
   const encoder = new TextEncoder();
@@ -86,7 +83,7 @@ export default function Home() {
   const [credSecret, setCredSecret] = useState('my-cred-secret-abc');
   const [credIssuer, setCredIssuer] = useState('99967b5594ee4cc8ec0c31f8cbc02be10089e16eb269ba92f4b66d6b11431953');
   const [credTier, setCredTier] = useState('1');
-  
+
   // Verify State
   const [requiredTier, setRequiredTier] = useState('1');
 
@@ -101,7 +98,7 @@ export default function Home() {
       await navigator.clipboard.writeText(contractAddress || '');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch {}
+    } catch { }
   }, [contractAddress]);
 
   const truncateAddress = (addr: string, start = 6, end = 4) =>
@@ -110,7 +107,7 @@ export default function Home() {
   const handleAuthorize = async () => {
     try {
       await authorizeIssuer(derivedIssuerIdBytes, { issuerSecret: to32Bytes(issuerSecret) });
-    } catch {}
+    } catch { }
   };
 
   const handleIssue = async () => {
@@ -119,7 +116,7 @@ export default function Home() {
         issuerSecret: to32Bytes(issuerSecret),
         credentialType: BigInt(issueTier)
       });
-    } catch {}
+    } catch { }
   };
 
   const handleRevoke = async () => {
@@ -129,7 +126,7 @@ export default function Home() {
       await revokeCredential(targetCommitmentBytes, {
         issuerSecret: to32Bytes(issuerSecret)
       });
-    } catch {}
+    } catch { }
   };
 
   const handleVerify = async () => {
@@ -238,12 +235,12 @@ export default function Home() {
             <div className="flex items-center gap-4 text-xs">
               <span className="text-silver/50 text-[11px]">Network: Midnight Preprod</span>
               <a
-                href={FEEDBACK_URL}
+                href={ }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-moon-glow hover:underline inline-flex items-center gap-1 text-[11px]"
               >
-                <MessageSquare className="w-3 h-3" /> Level 5 Feedback
+                <MessageSquare className="w-3 h-3" />  Feedback
               </a>
             </div>
           </div>
@@ -300,7 +297,7 @@ export default function Home() {
       {/* Dashboard Section */}
       <section className="w-full max-w-6xl my-8 relative z-10">
         <div className="flex flex-col md:flex-row gap-8">
-          
+
           {/* Left Column: Network & Contract Status */}
           <div className="w-full md:w-1/3 flex flex-col gap-6">
             <div className="border border-white/10 rounded-2xl p-6 bg-midnight-blue/30 backdrop-blur-sm">
@@ -324,18 +321,18 @@ export default function Home() {
                 )}
               </div>
               <div className="flex items-center gap-2 text-xs">
-              <div className={`w-2 h-2 rounded-full ${isContractValid ? 'bg-green-400' : 'bg-red-400'}`} />
-              <span className={isContractValid ? 'text-green-300' : 'text-red-300'}>
-                {isContractValid ? 'Contract verified on Preprod Indexer' : 'Connecting to Preprod Indexer...'}
-              </span>
-            </div>
-            
-            {isContractValid === false && (
-              <div className="mt-2 text-xs text-amber-300/80">
-                <span>Querying canonical contract state from Preprod Indexer...</span>
+                <div className={`w-2 h-2 rounded-full ${isContractValid ? 'bg-green-400' : 'bg-red-400'}`} />
+                <span className={isContractValid ? 'text-green-300' : 'text-red-300'}>
+                  {isContractValid ? 'Contract verified on Preprod Indexer' : 'Connecting to Preprod Indexer...'}
+                </span>
               </div>
-            )}
-          </div>
+
+              {isContractValid === false && (
+                <div className="mt-2 text-xs text-amber-300/80">
+                  <span>Querying canonical contract state from Preprod Indexer...</span>
+                </div>
+              )}
+            </div>
 
             {/* Error Display */}
             {contractError && (
@@ -343,7 +340,7 @@ export default function Home() {
                 ⚠️ {contractError}
               </div>
             )}
-            
+
             {/* Loading Display */}
             {isLoading && (
               <div className="p-4 rounded-xl bg-moon-glow/10 border border-moon-glow/30 text-moon-glow text-sm flex items-center gap-3">
@@ -369,16 +366,16 @@ export default function Home() {
 
           {/* Right Column: Interaction Panels */}
           <div className="w-full md:w-2/3 flex flex-col gap-6">
-            
+
             {/* Tabs */}
             <div className="flex gap-4 border-b border-white/10 pb-4">
-              <button 
+              <button
                 onClick={() => { setActiveTab('holder'); resetState(); setVerifyResult(null); }}
                 className={`text-lg font-light pb-2 border-b-2 transition-colors ${activeTab === 'holder' ? 'border-moon-glow text-moon-white' : 'border-transparent text-silver/50 hover:text-silver'}`}
               >
                 Holder / Verifier
               </button>
-              <button 
+              <button
                 onClick={() => { setActiveTab('issuer'); resetState(); setVerifyResult(null); }}
                 className={`text-lg font-light pb-2 border-b-2 transition-colors ${activeTab === 'issuer' ? 'border-moon-glow text-moon-white' : 'border-transparent text-silver/50 hover:text-silver'}`}
               >
@@ -405,7 +402,7 @@ export default function Home() {
                         Credential verification requires an active credential issued on-chain. The pre-filled values below match the verified canonical deployment baseline on Midnight Preprod, ready for immediate zero-knowledge verification.
                       </p>
                     </div>
-                    
+
                     <MoonCard>
                       <div className="flex items-center justify-between mb-4">
                         <h4 className="font-medium text-moon-white flex items-center gap-2">
@@ -446,7 +443,7 @@ export default function Home() {
                       <p className="text-xs text-silver/60 mb-4 leading-relaxed">
                         Generate a zero-knowledge proof that: <strong>(1)</strong> your credential was issued by an active authorized issuer, <strong>(2)</strong> it has not been revoked on-chain, and <strong>(3)</strong> your tier satisfies <code className="text-moon-glow font-mono">tier &gt;= requiredTier</code>.
                       </p>
-                      
+
                       <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-end">
                         <div className="flex-1">
                           <label className="block text-xs text-silver mb-1">Required Tier (Public Policy)</label>
@@ -471,7 +468,7 @@ export default function Home() {
                             <li>Eligibility threshold satisfied (<code className="text-green-300 font-mono">tier &gt;= {requiredTier}</code>)</li>
                             <li>Ledger verification counter incremented</li>
                           </ul>
-                          
+
                           <div className="mt-4 pt-4 border-t border-white/10">
                             <h5 className="text-amber-200/80 font-medium mb-2 flex items-center gap-2"><Lock className="w-4 h-4" /> KEPT STRICTLY PRIVATE</h5>
                             <ul className="text-sm text-silver/60 space-y-1 ml-6 list-disc marker:text-amber-200/80">
@@ -483,7 +480,7 @@ export default function Home() {
                           <p className="text-[10px] text-silver/40 mt-4 italic">Note: Zero-knowledge proof was evaluated locally via WASM before transaction submission.</p>
                         </motion.div>
                       )}
-                      
+
                       {verifyResult === false && (
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-6 p-4 rounded-xl border border-red-500/30 bg-red-900/10 flex items-start gap-3 text-red-300">
                           <XCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -505,13 +502,13 @@ export default function Home() {
                     <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200/80">
                       <strong>Demo Issuer Registration:</strong> This section is open for the MVP to allow testing of the full issuance and revocation lifecycle.
                     </div>
-                    
+
                     <MoonCard>
                       <h4 className="font-medium text-moon-white mb-2">1. Issuer Setup (authorizeIssuer)</h4>
                       <p className="text-xs text-silver/60 mb-4">
                         Registers the issuer's public commitment on the Midnight Preprod ledger. The issuer secret never becomes a public circuit argument.
                       </p>
-                      
+
                       <div className="grid grid-cols-1 gap-4 mb-4">
                         <div>
                           <label className="block text-xs text-silver mb-1">Issuer Secret (Private)</label>
@@ -554,7 +551,7 @@ export default function Home() {
                         Issue Credential
                       </MoonButton>
                     </MoonCard>
-                    
+
                     <MoonCard>
                       <h4 className="font-medium text-moon-white mb-2">3. Revoke Credential (revokeCredential)</h4>
                       <p className="text-xs text-silver/60 mb-4">

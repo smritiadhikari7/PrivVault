@@ -1,6 +1,6 @@
 # PrivVault
 
-[![Midnight CI](https://github.com/akash-mondal-1/Midnight-Vault/actions/workflows/ci.yml/badge.svg)](https://github.com/akash-mondal-1/Midnight-Vault/actions/workflows/ci.yml)
+[![Midnight CI](https://github.com/smritiadhikari7/PrivVault/actions/workflows/ci.yml/badge.svg)](https://github.com/smritiadhikari7/PrivVault/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)](./tests/)
 [![Compact](https://img.shields.io/badge/Compact-0.31.1-blue)](https://docs.midnight.network/)
 [![Network](https://img.shields.io/badge/Network-Midnight%20Preprod-purple)](https://indexer.preprod.midnight.network/api/v4/graphql)
@@ -178,8 +178,8 @@ export circuit revokeCredential(credentialCommitment: Bytes<32>): [] {
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/akash-mondal-1/Midnight-Vault.git
-cd Midnight-Vault
+git clone https://github.com/smritiadhikari7/PrivVault.git
+cd PrivVault
 ```
 
 ### Step 2: Install Dependencies
