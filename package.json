@@ -4,7 +4,9 @@
   "description": "Privacy-preserving identity verification platform using Midnight Compact",
   "main": "dist/index.js",
   "scripts": {
+    "dev": "npm run dev --prefix Frontend",
     "build": "tsc",
+    "build:frontend": "npm run build --prefix Frontend",
     "compile": "ts-node scripts/compile.ts",
     "test": "jest",
     "clean": "rm -rf dist coverage managed/*"

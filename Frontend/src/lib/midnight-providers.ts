@@ -11,7 +11,7 @@ import { setNetworkId } from '@midnight-ntwrk/midnight-js-network-id';
 import { createProverKey, createVerifierKey, createZKIR } from '@midnight-ntwrk/midnight-js-types';
 import type { ConnectedAPI } from '@midnight-ntwrk/dapp-connector-api';
 import type { MidnightProviders, UnboundTransaction } from '@midnight-ntwrk/midnight-js-types';
-import { Transaction } from '@midnight-ntwrk/ledger-v7';
+import { Transaction } from '@midnight-ntwrk/ledger-v8';
 import { toHex, fromHex } from './hex-utils';
 
 export { toHex, fromHex };
