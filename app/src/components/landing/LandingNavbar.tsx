@@ -10,11 +10,11 @@ import type { WalletOption } from "@/lib/midnight-client";
 import styles from "./Landing.module.css";
 
 const navLinks = [
-  { href: "#product", label: "Product" },
   { href: "#how-it-works", label: "How It Works" },
-  { href: "#interactive-demo", label: "ZK Demo" },
-  { href: "#technology", label: "Technology" },
-  { href: "#use-cases", label: "Use Cases" },
+  { href: "#interactive-demo", label: "Try It" },
+  { href: "#midnight", label: "Why Midnight" },
+  { href: "#technology", label: "Architecture" },
+  { href: "#security", label: "Security" },
   { href: "#faq", label: "FAQ" },
 ];
 

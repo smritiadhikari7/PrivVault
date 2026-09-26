@@ -9,10 +9,10 @@
 .landingShell {
   --nx-bg: #050608;
   --nx-bg-subtle: #080a0f;
-  --nx-card-bg: rgba(14, 17, 24, 0.72);
-  --nx-card-bg-solid: #0d1017;
-  --nx-card-border: rgba(255, 255, 255, 0.075);
-  --nx-card-border-hover: rgba(255, 255, 255, 0.16);
+  --nx-card-bg: #090d14;
+  --nx-card-bg-solid: #090d14;
+  --nx-card-border: rgba(255, 255, 255, 0.1);
+  --nx-card-border-hover: rgba(255, 255, 255, 0.22);
   --nx-card-border-active: rgba(56, 189, 248, 0.4);
 
   --nx-text-primary: #ffffff;
@@ -339,58 +339,68 @@
 .sectionTag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
+  gap: 7px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  color: var(--nx-accent-cyan);
+  background: #0a0d14;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 20px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
 .sectionTagAlert {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
+  gap: 7px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  background: rgba(244, 63, 94, 0.08);
-  border: 1px solid rgba(244, 63, 94, 0.25);
+  background: #0a0d14;
+  border: 1px solid rgba(244, 63, 94, 0.35);
   color: #fb7185;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .sectionTitle {
-  font-size: clamp(30px, 4.2vw, 48px);
-  font-weight: 700;
-  letter-spacing: -0.035em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 350;
+  letter-spacing: -0.028em;
   line-height: 1.12;
   color: #ffffff;
   margin: 0 0 18px 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
 .sectionLead {
-  font-size: clamp(15px, 1.8vw, 17px);
-  color: var(--nx-text-secondary);
-  line-height: 1.6;
-  margin: 0;
+  font-size: clamp(15px, 1.25vw, 17px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.62;
+  max-width: 640px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .highlightText {
+  font-family: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.015em;
   color: #ffffff;
-  background: linear-gradient(180deg, #ffffff 30%, rgba(255, 255, 255, 0.6) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-text-fill-color: initial;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
 /* --------------------------------------------------------------------------
@@ -2771,10 +2781,10 @@
   width: min(100%, 1160px);
   margin: 0 auto;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background: var(--nx-card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #090d14;
   padding: 36px;
-  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .inspectorHeader {
@@ -4108,10 +4118,10 @@
   width: min(100%, 1160px);
   margin: 0 auto 48px auto;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background: var(--nx-card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #090d14;
   padding: 28px;
-  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .pipelineTitleBar {

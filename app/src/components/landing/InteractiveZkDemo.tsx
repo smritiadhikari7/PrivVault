@@ -106,7 +106,7 @@ export function InteractiveZkDemo() {
       <div className={styles.sectionHeaderCentered}>
         <div className={styles.sectionTag}>
           <KeyRound size={12} />
-          <span>Interactive Cryptographic Proof Sandbox</span>
+          <span>Try It / ZK Demo</span>
         </div>
         <h2 className={styles.sectionTitle}>
           See what PrivVault reveals &mdash;<br />

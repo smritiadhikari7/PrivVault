@@ -76,7 +76,7 @@ export function HowItWorksFlow() {
       <div className={styles.sectionHeaderCentered}>
         <div className={styles.sectionTag}>
           <Layers size={12} />
-          <span>Protocol Mechanics</span>
+          <span>How It Works</span>
         </div>
         <h2 className={styles.sectionTitle}>
           How PrivVault delivers<br />

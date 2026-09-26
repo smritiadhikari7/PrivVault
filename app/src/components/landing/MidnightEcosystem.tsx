@@ -36,7 +36,7 @@ export function MidnightEcosystem() {
       <div className={styles.sectionHeaderCentered}>
         <div className={styles.sectionTag}>
           <Globe2 size={12} />
-          <span>Ecosystem Foundation</span>
+          <span>Why Midnight</span>
         </div>
         <h2 className={styles.sectionTitle}>
           Built on Midnight.<br />

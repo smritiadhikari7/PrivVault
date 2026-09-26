@@ -3,19 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LandingNavbar } from "./LandingNavbar";
-import { ProblemComparison } from "./ProblemComparison";
-import { CoreCapabilities } from "./CoreCapabilities";
 import { HowItWorksFlow } from "./HowItWorksFlow";
 import { InteractiveZkDemo } from "./InteractiveZkDemo";
-import { PrivacyArchitecture } from "./PrivacyArchitecture";
-import { UseCasesGrid } from "./UseCasesGrid";
+import { MidnightEcosystem } from "./MidnightEcosystem";
 import { TechArchitecture } from "./TechArchitecture";
 import { SecurityTrust } from "./SecurityTrust";
-import { ProductShowcase } from "./ProductShowcase";
-import { MidnightEcosystem } from "./MidnightEcosystem";
-import { DifferentiatorMatrix } from "./DifferentiatorMatrix";
 import { FaqAccordion } from "./FaqAccordion";
-import { FinalCta } from "./FinalCta";
 import { LandingFooter } from "./LandingFooter";
 import styles from "./Landing.module.css";
 
@@ -116,44 +109,23 @@ export function LandingPage() {
           </div>
         </section>
 
-        {/* 1. PROBLEM COMPARISON */}
-        <ProblemComparison />
-
-        {/* 2. CORE PROTOCOL PILLARS */}
-        <CoreCapabilities />
-
-        {/* 3. HOW IT WORKS 4-STEP FLOW */}
+        {/* 1. HOW IT WORKS 4-STEP FLOW */}
         <HowItWorksFlow />
 
-        {/* 4. INTERACTIVE ZK DEMONSTRATION SANDBOX */}
+        {/* 2. TRY IT: INTERACTIVE ZK DEMONSTRATION SANDBOX */}
         <InteractiveZkDemo />
 
-        {/* 5. PRIVACY ARCHITECTURE & DUAL-STATE */}
-        <PrivacyArchitecture />
-
-        {/* 6. USE CASES GRID */}
-        <UseCasesGrid />
-
-        {/* 7. LIVE PRODUCT SHOWCASE */}
-        <ProductShowcase />
-
-        {/* 8. TECHNICAL ARCHITECTURE & DATA FLOW */}
-        <TechArchitecture />
-
-        {/* 9. SECURITY & CRYPTOGRAPHIC TRUST */}
-        <SecurityTrust />
-
-        {/* 10. BUILT ON MIDNIGHT ECOSYSTEM */}
+        {/* 3. WHY MIDNIGHT: ECOSYSTEM FOUNDATION */}
         <MidnightEcosystem />
 
-        {/* 11. DIFFERENTIATOR MATRIX */}
-        <DifferentiatorMatrix />
+        {/* 4. TECHNICAL ARCHITECTURE & DATA FLOW */}
+        <TechArchitecture />
 
-        {/* 12. FAQ ACCORDION */}
+        {/* 5. SECURITY MODEL & GUARANTEES */}
+        <SecurityTrust />
+
+        {/* 6. FREQUENTLY ASKED QUESTIONS */}
         <FaqAccordion />
-
-        {/* 13. FINAL CINEMATIC CTA */}
-        <FinalCta />
       </main>
 
       {/* FOOTER */}
