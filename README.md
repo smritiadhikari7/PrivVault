@@ -285,10 +285,18 @@ The GitHub Actions workflow (`.github/workflows/ci.yml`) automatically executes 
 | **15+ Meaningful Commits** | ✅ PASS | 87+ meaningful commits on `main` |
 | **Product X Profile** | ✅ PASS | [@privvault_](https://x.com/privvault_) |
 | **Demo Video** | ✅ PASS | [Watch MVP Demo](https://drive.google.com/file/d/1zPzHtmwoX7Y_Ul8eqLfmV5v_1o_4YMRQ/view?usp=drive_link) |
+| **User Feedback Form** | ✅ PASS | [Feedback Form (Google Form)](https://forms.gle/K33fcHoLQ9iiQoBC7) |
+| **Tester Feedback Tracker** | ✅ PASS | [Responses Spreadsheet](https://docs.google.com/spreadsheets/d/1DpFulcclh-zrL8PMCsx6_jXl1QsYSPyJ8DVNKQVKANs/edit?usp=sharing) |
 
 ---
 
+## 13. Community Feedback & Tester Tracking
 
+We actively collect user feedback for PrivVault on Midnight Preprod:
+- **Feedback Form:** [Submit Feedback via Google Form](https://forms.gle/K33fcHoLQ9iiQoBC7)
+- **Public Responses & Tracker:** [View Feedback Responses Sheet](https://docs.google.com/spreadsheets/d/1DpFulcclh-zrL8PMCsx6_jXl1QsYSPyJ8DVNKQVKANs/edit?usp=sharing)
+
+---
 
 ## 14. License
 

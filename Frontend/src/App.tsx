@@ -10,6 +10,17 @@ import { getIssuerId, getUserId, getCredentialCommitment } from '@/lib/credentia
 import { toHex, fromHex } from '@/lib/hex-utils';
 import { Shield, Orbit, Lock, Sparkles, ExternalLink, Copy, CheckCircle, RefreshCw, Key, ShieldCheck, XCircle, MessageSquare } from 'lucide-react';
 
+// User Feedback Form & Responses Spreadsheet
+const FEEDBACK_FORM_URL =
+  (import.meta.env.VITE_FEEDBACK_FORM_URL as string) ||
+  'https://forms.gle/K33fcHoLQ9iiQoBC7';
+
+const FEEDBACK_SPREADSHEET_URL =
+  (import.meta.env.VITE_FEEDBACK_SPREADSHEET_URL as string) ||
+  'https://docs.google.com/spreadsheets/d/1DpFulcclh-zrL8PMCsx6_jXl1QsYSPyJ8DVNKQVKANs/edit?usp=sharing';
+
+const FEEDBACK_URL = FEEDBACK_FORM_URL;
+
 const to32Bytes = (text: string): Uint8Array => {
   const arr = new Uint8Array(32);
   const encoder = new TextEncoder();
@@ -235,12 +246,20 @@ export default function Home() {
             <div className="flex items-center gap-4 text-xs">
               <span className="text-silver/50 text-[11px]">Network: Midnight Preprod</span>
               <a
-                href={ }
+                href={FEEDBACK_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-moon-glow hover:underline inline-flex items-center gap-1 text-[11px]"
               >
-                <MessageSquare className="w-3 h-3" />  Feedback
+                <MessageSquare className="w-3 h-3" /> Feedback Form
+              </a>
+              <a
+                href={FEEDBACK_SPREADSHEET_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-silver/60 hover:text-moon-white hover:underline inline-flex items-center gap-1 text-[11px]"
+              >
+                Feedback Sheet
               </a>
             </div>
           </div>
@@ -578,13 +597,22 @@ export default function Home() {
         <p>Built for the Midnight DApp Challenge — Level 6 Supermoon.</p>
         <div className="flex items-center gap-6">
           <a
-            href={FEEDBACK_URL}
+            href={FEEDBACK_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-moon-glow hover:text-white transition-colors text-xs"
             id="footer-feedback-link"
           >
             <MessageSquare className="w-3.5 h-3.5 text-moon-glow" /> Give Feedback
+          </a>
+          <a
+            href={FEEDBACK_SPREADSHEET_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-silver/60 hover:text-moon-white transition-colors text-xs"
+            id="footer-spreadsheet-link"
+          >
+            Feedback Sheet
           </a>
           <a href="https://faucet.preprod.midnight.network/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-moon-glow/70 hover:text-moon-glow transition-colors text-xs">
             Preprod Faucet
