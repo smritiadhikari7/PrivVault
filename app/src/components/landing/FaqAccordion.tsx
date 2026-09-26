@@ -11,19 +11,19 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    q: "What is Nexora?",
-    a: "Nexora is a privacy-first zero-knowledge credential and access gateway built on the Midnight Network. It enables members to prove they satisfy specific rules or possess valid qualifications without revealing their identity, documents, or underlying personal data.",
+    q: "What is PrivVault?",
+    a: "PrivVault is a privacy-first zero-knowledge credential and access gateway built on the Midnight Network. It enables members to prove they satisfy specific rules or possess valid qualifications without revealing their identity, documents, or underlying personal data.",
   },
   {
     q: "What is a zero-knowledge proof (ZKP)?",
     a: "A zero-knowledge proof is a cryptographic method where one party (the prover) mathematically proves to another party (the verifier) that a specific statement is true, without conveying any information beyond the validity of the statement itself.",
   },
   {
-    q: "What information does Nexora reveal to the verifier?",
-    a: "Nexora reveals only the cryptographic proof object (π), the public input parameters (such as the gate ID or tier requirement), and a unique one-time nullifier hash. Your raw attributes, dates of birth, balances, and identity remain strictly hidden.",
+    q: "What information does PrivVault reveal to the verifier?",
+    a: "PrivVault reveals only the cryptographic proof object (π), the public input parameters (such as the gate ID or tier requirement), and a unique one-time nullifier hash. Your raw attributes, dates of birth, balances, and identity remain strictly hidden.",
   },
   {
-    q: "How does Nexora protect my private data from leaking?",
+    q: "How does PrivVault protect my private data from leaking?",
     a: "All witness computations and credential secrets are stored and processed locally within your browser using WebAssembly. No sensitive credentials are ever sent to an external server or written into public blockchain blocks.",
   },
   {
@@ -35,8 +35,8 @@ const faqs: FaqItem[] = [
     a: "Compact is Midnight's domain-specific programming language for writing zero-knowledge smart contracts. It allows developers to declare private state circuits and public ledger rules with formal cryptographic correctness.",
   },
   {
-    q: "Do I need a wallet to use Nexora?",
-    a: "Yes. Nexora supports Midnight-compatible wallets such as Lace and 1AM Wallet. The wallet signs transactions and balances minimal tDUST gas fees for state transitions on the Midnight Preprod network.",
+    q: "Do I need a wallet to use PrivVault?",
+    a: "Yes. PrivVault supports Midnight-compatible wallets such as Lace and 1AM Wallet. The wallet signs transactions and balances minimal tDUST gas fees for state transitions on the Midnight Preprod network.",
   },
   {
     q: "What happens when a proof is invalid or conditions are not met?",
@@ -47,8 +47,8 @@ const faqs: FaqItem[] = [
     a: "Yes. Gate operators can update the allowlist Merkle root on the Midnight smart contract to rotate or invalidate credentials, and epoch-based nullifiers can enforce one-time or time-limited access rights.",
   },
   {
-    q: "Is Nexora currently production-ready?",
-    a: "Nexora is currently live and operating on the Midnight Preprod testnet, with an active contract deployed at 0x85c6d5ce4fec74c33a17d4307290bf7d05878637b9f2e70bead1d90bdf5353cc. Over 70 testnet users have validated its end-to-end functionality as part of the official developer submission.",
+    q: "Is PrivVault currently production-ready?",
+    a: "PrivVault is currently live and operating on the Midnight Preprod testnet, with an active contract deployed at 0x85c6d5ce4fec74c33a17d4307290bf7d05878637b9f2e70bead1d90bdf5353cc. Over 70 testnet users have validated its end-to-end functionality as part of the official developer submission.",
   },
 ];
 
@@ -70,7 +70,7 @@ export function FaqAccordion() {
           Technical &amp; Protocol FAQ
         </h2>
         <p className={styles.sectionLead}>
-          Everything you need to know about Nexora, Midnight, Compact circuits, and zero-knowledge verification.
+          Everything you need to know about PrivVault, Midnight, Compact circuits, and zero-knowledge verification.
         </p>
       </div>
 

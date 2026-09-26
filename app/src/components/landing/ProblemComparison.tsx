@@ -15,7 +15,7 @@ export function ProblemComparison() {
           Verification shouldn&apos;t require exposure.
         </h2>
         <p className={styles.sectionLead}>
-          Conventional access systems force you to hand over entire documents just to answer a simple yes-or-no question. Nexora separates qualification from identity.
+          Conventional access systems force you to hand over entire documents just to answer a simple yes-or-no question. PrivVault separates qualification from identity.
         </p>
       </div>
 
@@ -78,49 +78,49 @@ export function ProblemComparison() {
           </div>
         </div>
 
-        {/* Nexora ZK Side */}
-        <div className={styles.comparisonCardNexora}>
-          <div className={styles.cardBadgeNexora}>
+        {/* PrivVault ZK Side */}
+        <div className={styles.comparisonCardPrivVault}>
+          <div className={styles.cardBadgePrivVault}>
             <ShieldCheck size={14} />
-            <span>NEXORA ZERO-KNOWLEDGE ARCHITECTURE</span>
+            <span>PrivVault ZERO-KNOWLEDGE ARCHITECTURE</span>
           </div>
 
-          <h3 className={styles.comparisonHeadingNexora}>Mathematical Verification</h3>
-          <p className={styles.comparisonDescNexora}>
+          <h3 className={styles.comparisonHeadingPrivVault}>Mathematical Verification</h3>
+          <p className={styles.comparisonDescPrivVault}>
             Prove you satisfy the rule without exposing the underlying values. Zero documents handed over, zero honeypots created.
           </p>
 
-          <div className={styles.pipelineIllustrationNexora}>
-            <div className={styles.pipelineStepNexora}>
-              <span className={styles.stepNumNexora}>01</span>
-              <div className={styles.stepContentNexora}>
+          <div className={styles.pipelineIllustrationPrivVault}>
+            <div className={styles.pipelineStepPrivVault}>
+              <span className={styles.stepNumPrivVault}>01</span>
+              <div className={styles.stepContentPrivVault}>
                 <strong>Encrypted Local Storage</strong>
                 <p>Credentials reside securely inside your browser</p>
               </div>
             </div>
-            <div className={styles.arrowBetweenNexora}>
+            <div className={styles.arrowBetweenPrivVault}>
               <ArrowRight size={16} />
             </div>
-            <div className={styles.pipelineStepNexora}>
-              <span className={styles.stepNumNexora}>02</span>
-              <div className={styles.stepContentNexora}>
+            <div className={styles.pipelineStepPrivVault}>
+              <span className={styles.stepNumPrivVault}>02</span>
+              <div className={styles.stepContentPrivVault}>
                 <strong>Local ZK Witness</strong>
                 <p>Compact circuit evaluates constraints privately</p>
               </div>
             </div>
-            <div className={styles.arrowBetweenNexora}>
+            <div className={styles.arrowBetweenPrivVault}>
               <ArrowRight size={16} />
             </div>
-            <div className={styles.pipelineStepNexora}>
-              <span className={styles.stepNumNexora}>03</span>
-              <div className={styles.stepContentNexora}>
+            <div className={styles.pipelineStepPrivVault}>
+              <span className={styles.stepNumPrivVault}>03</span>
+              <div className={styles.stepContentPrivVault}>
                 <strong>Midnight Verifiable Proof</strong>
                 <p>Ledger confirms eligibility with zero leakage</p>
               </div>
             </div>
           </div>
 
-          <div className={styles.nexoraPerks}>
+          <div className={styles.PrivVaultPerks}>
             <div className={styles.perkItem}>
               <Check size={16} className={styles.perkIcon} />
               <span>Zero knowledge revealed: only mathematical truth is proven</span>

@@ -60,7 +60,7 @@ export function Navigation() {
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-dark p-1" aria-hidden="true">
             <Image src="/logo.svg" alt="" width={28} height={28} className="h-full w-full" priority />
           </span>
-          <span className="font-display text-lg text-primary">Nexora</span>
+          <span className="font-display text-lg text-primary">PrivVault</span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

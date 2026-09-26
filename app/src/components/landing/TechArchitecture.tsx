@@ -72,7 +72,7 @@ export function TechArchitecture() {
           <span className={styles.highlightText}>Built on Midnight and Compact.</span>
         </h2>
         <p className={styles.sectionLead}>
-          Nexora does not use simulated cryptography. Every interaction runs on real zero-knowledge proofs and Midnight testnet smart contracts.
+          PrivVault does not use simulated cryptography. Every interaction runs on real zero-knowledge proofs and Midnight testnet smart contracts.
         </p>
       </div>
 
@@ -98,12 +98,12 @@ export function TechArchitecture() {
             <ArrowRight size={18} />
           </div>
 
-          {/* Node 2: Nexora App */}
+          {/* Node 2: PrivVault App */}
           <div className={styles.diagramNode}>
             <div className={styles.nodeIconCircle}>
               <Terminal size={18} />
             </div>
-            <strong>Nexora App</strong>
+            <strong>PrivVault App</strong>
             <span>Local State Engine</span>
           </div>
 

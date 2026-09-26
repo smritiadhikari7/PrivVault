@@ -1355,7 +1355,7 @@ export class MidnightClient {
       return `The credential enrollment transaction failed: ${detail}`;
     }
     if (message.startsWith("CREDENTIAL_HASH:")) return "The private credential could not be converted into its on-chain allowlist hash. Generate a new credential and retry.";
-    if (message.startsWith("CREDENTIAL_CHECK:")) return `Nexora could not check whether this credential is already enrolled: ${message.slice("CREDENTIAL_CHECK:".length)}`;
+    if (message.startsWith("CREDENTIAL_CHECK:")) return `PrivVault could not check whether this credential is already enrolled: ${message.slice("CREDENTIAL_CHECK:".length)}`;
     if (message.startsWith("CREDENTIAL_CONFIRM_FAILED:")) return `The credential enrollment transaction was rejected on-chain: ${message.slice("CREDENTIAL_CONFIRM_FAILED:".length)}`;
     if (message.startsWith("CREDENTIAL_CONFIRM:")) return `The credential enrollment is still pending. Do not submit it again until the Midnight indexer confirms the first transaction. (${message.slice("CREDENTIAL_CONFIRM:".length)})`;
     if (message === "CREDENTIAL_SUBMITTED_NO_ID") return "The credential enrollment request completed without a transaction reference. Check the gate state before retrying to avoid enrolling twice.";

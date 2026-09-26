@@ -109,7 +109,7 @@ export function InteractiveZkDemo() {
           <span>Interactive Cryptographic Proof Sandbox</span>
         </div>
         <h2 className={styles.sectionTitle}>
-          See what Nexora reveals &mdash;<br />
+          See what PrivVault reveals &mdash;<br />
           <span className={styles.highlightText}>and what it keeps permanently hidden.</span>
         </h2>
         <p className={styles.sectionLead}>
@@ -147,7 +147,7 @@ export function InteractiveZkDemo() {
             <span className={styles.dotGreen} />
           </div>
           <div className={styles.windowTitle}>
-            <span>nexora-zk-witness-engine v2.5.1 // Midnight Preprod Circuit</span>
+            <span>PrivVault-zk-witness-engine v2.5.1 // Midnight Preprod Circuit</span>
           </div>
           <div className={styles.windowBadge}>
             <Shield size={12} />
@@ -354,7 +354,7 @@ export function InteractiveZkDemo() {
                       <p className={styles.termSuccess}>[MIDNIGHT] Ledger preprod verification: VALID (tx: 0x7fa...)</p>
                     </>
                   ) : (
-                    <p className={styles.termDim}>$ nexora proof-engine --idle</p>
+                    <p className={styles.termDim}>$ PrivVault proof-engine --idle</p>
                   )}
                 </div>
               </div>

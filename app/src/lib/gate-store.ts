@@ -16,7 +16,7 @@ const LEGACY_STORAGE_KEY = ["privo", "ra_gates"].join("");
 export const DEFAULT_GATE: GateRecord = {
   id: "genesis",
   name: "Genesis Vault",
-  description: "A private launch room for approved Nexora members.",
+  description: "A private launch room for approved PrivVault members.",
   network: "preprod",
   contractId: null,
   deploymentTxId: null,

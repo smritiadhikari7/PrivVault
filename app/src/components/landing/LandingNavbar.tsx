@@ -86,10 +86,10 @@ export function LandingNavbar() {
           {/* Brand Logo */}
           <Link href="/" className={styles.navBrand} onClick={() => setMenuOpen(false)}>
             <div className={styles.brandIconBox}>
-              <Image src="/logo.svg" alt="Nexora Shield" width={18} height={18} priority />
+              <Image src="/logo.svg" alt="PrivVault Shield" width={18} height={18} priority />
             </div>
             <div className={styles.brandTextBlock}>
-              <span className={styles.brandName}>Nexora</span>
+              <span className={styles.brandName}>PrivVault</span>
               <span className={styles.brandTagline}>MIDNIGHT ZK</span>
             </div>
           </Link>

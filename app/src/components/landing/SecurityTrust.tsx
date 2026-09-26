@@ -63,7 +63,7 @@ export function SecurityTrust() {
           <span className={styles.highlightText}>It is the architecture.</span>
         </h2>
         <p className={styles.sectionLead}>
-          Nexora does not rely on organizational promises or closed-door privacy policies. Trust is enforced by cryptographic circuits and immutable blockchain execution.
+          PrivVault does not rely on organizational promises or closed-door privacy policies. Trust is enforced by cryptographic circuits and immutable blockchain execution.
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export function SecurityTrust() {
       <div className={styles.honestBoundaryBox}>
         <div className={styles.boundaryHeader}>
           <Key size={16} className={styles.accentIcon} />
-          <strong>WHAT NEXORA DOES & DOES NOT CLAIM</strong>
+          <strong>WHAT PrivVault DOES & DOES NOT CLAIM</strong>
         </div>
         <div className={styles.boundaryGrid}>
           <div className={styles.boundaryColTrue}>

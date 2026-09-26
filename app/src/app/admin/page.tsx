@@ -865,7 +865,7 @@ export default function AdminPage() {
                 />
               </div>
               <p className="mt-4 text-sm leading-6 text-muted">
-                Nexora hashes the credential locally before enrollment. Only the hash reaches the contract. Keep the raw credential private and share it only with the intended member.
+                PrivVault hashes the credential locally before enrollment. Only the hash reaches the contract. Keep the raw credential private and share it only with the intended member.
               </p>
               <StatusBanner tone="info" className="mt-4" title="Privacy notice">
                 Enrollment writes the credential hash into the public allowlist tree. The raw credential is not sent to
@@ -948,7 +948,7 @@ export default function AdminPage() {
                     placeholder="64 hexadecimal characters"
                     className="mt-2 min-h-12 w-full rounded-2xl border border-border-subtle bg-card px-4 font-mono text-xs text-primary outline-none focus:border-accent-soft focus:ring-2 focus:ring-accent/30 disabled:opacity-50"
                   />
-                  <p className="mt-2 text-xs leading-5 text-faint">This field is cleared after confirmation. It is never stored by Nexora.</p>
+                  <p className="mt-2 text-xs leading-5 text-faint">This field is cleared after confirmation. It is never stored by PrivVault.</p>
                 </div>
                 <button
                   type="submit"

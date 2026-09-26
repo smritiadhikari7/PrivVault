@@ -27,12 +27,12 @@ export function FinalCta() {
           </h2>
 
           <p className={styles.finalCtaLead}>
-            Experience privacy-preserving verification with Nexora. Deploy private gates, issue credentials, and let users prove qualification without exposing sensitive personal data.
+            Experience privacy-preserving verification with PrivVault. Deploy private gates, issue credentials, and let users prove qualification without exposing sensitive personal data.
           </p>
 
           <div className={styles.finalCtaBtnRow}>
             <Link href="/gate" className={styles.ctaPrimaryBtn}>
-              <span>Launch Nexora</span>
+              <span>Launch PrivVault</span>
               <ArrowRight size={16} />
             </Link>
             <Link href="/admin" className={styles.ctaSecondaryBtn}>

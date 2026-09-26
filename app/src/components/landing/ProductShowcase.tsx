@@ -20,7 +20,7 @@ export function ProductShowcase() {
           <span className={styles.highlightText}>made usable.</span>
         </h2>
         <p className={styles.sectionLead}>
-          Explore the real Nexora application interfaces running on Midnight Preprod &mdash; built for everyday members and protocol operators.
+          Explore the real PrivVault application interfaces running on Midnight Preprod &mdash; built for everyday members and protocol operators.
         </p>
       </div>
 
@@ -59,7 +59,7 @@ export function ProductShowcase() {
             <span className={styles.urlLock}>🔒</span>
             <span className={styles.urlProtocol}>https://</span>
             <span className={styles.urlDomain}>
-              nexora.network{activeTab === "gate" ? "/gate" : "/admin"}
+              PrivVault.network{activeTab === "gate" ? "/gate" : "/admin"}
             </span>
           </div>
           <div className={styles.browserNetworkBadge}>

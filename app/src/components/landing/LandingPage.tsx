@@ -61,13 +61,13 @@ export function LandingPage() {
 
             {/* Supporting Copy */}
             <p className={styles.somaSubtitle}>
-              Nexora enables privacy-preserving credential verification with zero-knowledge proofs &mdash; letting users prove what they qualify for without exposing unnecessary personal information.
+              PrivVault enables privacy-preserving credential verification with zero-knowledge proofs &mdash; letting users prove what they qualify for without exposing unnecessary personal information.
             </p>
 
             {/* Dual Pill Action Buttons */}
             <div className={styles.somaButtonsRow}>
               <Link href="/gate" className={styles.somaPrimaryBtn}>
-                <span className={styles.somaBtnTextBlack}>Launch Nexora</span>
+                <span className={styles.somaBtnTextBlack}>Launch PrivVault</span>
                 <span className={styles.somaBtnArrowBlack}>&rarr;</span>
               </Link>
               <a href="#how-it-works" className={styles.somaSecondaryBtn}>

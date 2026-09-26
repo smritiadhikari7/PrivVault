@@ -9,7 +9,7 @@ interface UseCaseItem {
   category: string;
   questionSolved: string;
   traditionalProblem: string;
-  nexoraSolution: string;
+  PrivVaultSolution: string;
 }
 
 const useCases: UseCaseItem[] = [
@@ -19,7 +19,7 @@ const useCases: UseCaseItem[] = [
     category: "IDENTITY & COMPLIANCE",
     questionSolved: "Is the user at least 21 years old?",
     traditionalProblem: "Demands full birth certificate, passport scan, and home address.",
-    nexoraSolution: "Generates a ZK proof affirming Age ≥ 21. Birth date and name remain 100% confidential.",
+    PrivVaultSolution: "Generates a ZK proof affirming Age ≥ 21. Birth date and name remain 100% confidential.",
   },
   {
     icon: Coins,
@@ -27,7 +27,7 @@ const useCases: UseCaseItem[] = [
     category: "DEFI & PRIVATE WEALTH",
     questionSolved: "Does the trader meet the accredited threshold?",
     traditionalProblem: "Requires uploading bank account statements and tax returns.",
-    nexoraSolution: "Proves balance or net worth exceeds the criteria without disclosing a single numerical balance.",
+    PrivVaultSolution: "Proves balance or net worth exceeds the criteria without disclosing a single numerical balance.",
   },
   {
     icon: ShieldCheck,
@@ -35,7 +35,7 @@ const useCases: UseCaseItem[] = [
     category: "WEB3 INFRASTRUCTURE",
     questionSolved: "Is the visitor an approved member of this private vault?",
     traditionalProblem: "Forces users to dox public wallet addresses and transaction history.",
-    nexoraSolution: "Proves Merkle tree leaf inclusion in the allowlist without revealing which leaf is yours.",
+    PrivVaultSolution: "Proves Merkle tree leaf inclusion in the allowlist without revealing which leaf is yours.",
   },
   {
     icon: Ticket,
@@ -43,7 +43,7 @@ const useCases: UseCaseItem[] = [
     category: "AIRDROPS & PRIVACY REWARDS",
     questionSolved: "Has this eligible member already claimed their reward?",
     traditionalProblem: "Tracks wallets and IP addresses, creating centralized surveillance logs.",
-    nexoraSolution: "Emits a deterministic cryptographic nullifier. Prevents double-claiming with total anonymity.",
+    PrivVaultSolution: "Emits a deterministic cryptographic nullifier. Prevents double-claiming with total anonymity.",
   },
   {
     icon: Briefcase,
@@ -51,7 +51,7 @@ const useCases: UseCaseItem[] = [
     category: "ENTERPRISE SECURITY",
     questionSolved: "Does the engineer possess level-4 production access?",
     traditionalProblem: "Exposes employee rosters, internal user IDs, and department hierarchies.",
-    nexoraSolution: "Proves valid cryptographic delegation signature from the company's master root key.",
+    PrivVaultSolution: "Proves valid cryptographic delegation signature from the company's master root key.",
   },
   {
     icon: Award,
@@ -59,7 +59,7 @@ const useCases: UseCaseItem[] = [
     category: "PROFESSIONAL ATTESTATION",
     questionSolved: "Does the applicant hold a certified professional license?",
     traditionalProblem: "Exposes license serial numbers, university transcripts, and personal contact info.",
-    nexoraSolution: "Proves validity of an issuer-signed credential hash without publishing the certificate.",
+    PrivVaultSolution: "Proves validity of an issuer-signed credential hash without publishing the certificate.",
   },
 ];
 
@@ -75,7 +75,7 @@ export function UseCasesGrid() {
           <span className={styles.highlightText}>trust matters, but privacy is non-negotiable.</span>
         </h2>
         <p className={styles.sectionLead}>
-          From DeFi thresholds to restricted vaults, Nexora replaces document over-sharing with mathematical proofs.
+          From DeFi thresholds to restricted vaults, PrivVault replaces document over-sharing with mathematical proofs.
         </p>
       </div>
 
@@ -100,12 +100,12 @@ export function UseCasesGrid() {
 
               <div className={styles.useCaseComparison}>
                 <div className={styles.compRowLegacy}>
-                  <span className={styles.compBadgeRed}>WITHOUT NEXORA</span>
+                  <span className={styles.compBadgeRed}>WITHOUT PrivVault</span>
                   <p>{uc.traditionalProblem}</p>
                 </div>
-                <div className={styles.compRowNexora}>
-                  <span className={styles.compBadgeGreen}>WITH NEXORA</span>
-                  <p>{uc.nexoraSolution}</p>
+                <div className={styles.compRowPrivVault}>
+                  <span className={styles.compBadgeGreen}>WITH PrivVault</span>
+                  <p>{uc.PrivVaultSolution}</p>
                 </div>
               </div>
             </div>

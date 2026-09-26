@@ -38,7 +38,7 @@ const capabilities: Capability[] = [
     title: "User-Controlled Credentials",
     tag: "CLIENT-SIDE WITNESS",
     description:
-      "Your private keys, hashes, and credential secrets remain encrypted on your device. Nexora never runs a central database of keys.",
+      "Your private keys, hashes, and credential secrets remain encrypted on your device. PrivVault never runs a central database of keys.",
     technicalDetail:
       "IndexedDB encrypted store using local WebCrypto keys. Proof witnesses are constructed exclusively client-side.",
     svgType: "vault",
@@ -125,7 +125,7 @@ export function CoreCapabilities() {
           <span className={styles.highlightText}>Engineered for cryptographic trust.</span>
         </h2>
         <p className={styles.sectionLead}>
-          Every component of Nexora is built around the mathematical guarantee that permission does not require identity.
+          Every component of PrivVault is built around the mathematical guarantee that permission does not require identity.
         </p>
       </div>
 

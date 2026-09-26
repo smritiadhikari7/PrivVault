@@ -204,7 +204,7 @@ function GatePageContent() {
               {step === "confirmed" ? "The gate is open" : "Verify without revealing"}
             </h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Nexora proves that your private credential belongs to this gate. The credential itself is never
+              PrivVault proves that your private credential belongs to this gate. The credential itself is never
               displayed in the result.
             </p>
             <div className="mt-6 rounded-2xl border border-border-subtle bg-surface p-4 text-xs leading-5 text-muted">
@@ -341,8 +341,8 @@ function GatePageContent() {
                     </label>
                     <p id="credential-help" className="mt-2 text-sm leading-6 text-muted">
                       Paste the <strong className="font-semibold text-primary">raw secret</strong> the operator sent you
-                      (64 hex characters). Nexora hashes it locally and proves the hash is on the allowlist. The
-                      secret is cleared before proof generation and never stored by Nexora.
+                      (64 hex characters). PrivVault hashes it locally and proves the hash is on the allowlist. The
+                      secret is cleared before proof generation and never stored by PrivVault.
                     </p>
                     <StatusBanner tone="info" className="mt-4" title="What becomes public">
                       The contract checks a public allowlist root and records a public nullifier after success. It does

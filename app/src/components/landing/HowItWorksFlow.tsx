@@ -45,7 +45,7 @@ const steps: StepDetail[] = [
     title: "Generate ZK Proof",
     actor: "Client Prover",
     summary:
-      "Nexora's local prover synthesizes a zk-SNARK witness inside the user's browser without contacting any external servers.",
+      "PrivVault's local prover synthesizes a zk-SNARK witness inside the user's browser without contacting any external servers.",
     deepDive:
       "Using the Midnight JS proof provider, the client compiles circuit inputs into an R1CS constraint system. The zero-knowledge property ensures no eavesdropper can deduce the witness w.",
     inputPayload: "Private Witness: (credential_secret, merkle_path, nullifier_seed)",
@@ -79,7 +79,7 @@ export function HowItWorksFlow() {
           <span>Protocol Mechanics</span>
         </div>
         <h2 className={styles.sectionTitle}>
-          How Nexora delivers<br />
+          How PrivVault delivers<br />
           <span className={styles.highlightText}>verifiable privacy in 4 steps.</span>
         </h2>
         <p className={styles.sectionLead}>

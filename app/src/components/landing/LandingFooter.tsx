@@ -17,9 +17,9 @@ export function LandingFooter() {
         <div className={styles.footerBrandCol}>
           <Link href="/" className={styles.footerBrand} onClick={scrollToTop}>
             <div className={styles.brandIconBox}>
-              <Image src="/logo.svg" alt="Nexora Logo" width={18} height={18} />
+              <Image src="/logo.svg" alt="PrivVault Logo" width={18} height={18} />
             </div>
-            <span className={styles.brandName}>Nexora</span>
+            <span className={styles.brandName}>PrivVault</span>
           </Link>
           <p className={styles.footerPhilosophy}>
             &ldquo;Prove permission, not identity.&rdquo;
@@ -93,14 +93,14 @@ export function LandingFooter() {
               </a>
             </li>
             <li>
-              <a href="https://github.com/rishiisarkar/Nexora" target="_blank" rel="noreferrer">
+              <a href="https://github.com/rishiisarkar/PrivVault" target="_blank" rel="noreferrer">
                 <span>Public GitHub</span>
                 <ArrowUpRight size={11} />
               </a>
             </li>
             <li>
-              <a href="https://x.com/NexoraWeb3x" target="_blank" rel="noreferrer">
-                <span>Official X (@NexoraWeb3x)</span>
+              <a href="https://x.com/PrivVaultWeb3x" target="_blank" rel="noreferrer">
+                <span>Official X (@PrivVaultWeb3x)</span>
                 <ArrowUpRight size={11} />
               </a>
             </li>
@@ -122,7 +122,7 @@ export function LandingFooter() {
       <div className={styles.subFooterBar}>
         <div className={styles.subFooterContainer}>
           <div className={styles.subFooterLeft}>
-            <span>&copy; {new Date().getFullYear()} Nexora Protocol. Open source under Apache-2.0.</span>
+            <span>&copy; {new Date().getFullYear()} PrivVault Protocol. Open source under Apache-2.0.</span>
           </div>
           <div className={styles.subFooterRight}>
             <span className={styles.preprodIndicator}>

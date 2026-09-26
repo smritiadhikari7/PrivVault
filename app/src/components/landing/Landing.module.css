@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NEXORA - PROTOCOL DESIGN SYSTEM & LANDING PAGE STYLESHEET
+   PrivVault - PROTOCOL DESIGN SYSTEM & LANDING PAGE STYLESHEET
    Aesthetics: Premium, Futuristic, Minimal, Cryptographic, Cinematic, Technical
    ========================================================================== */
 
@@ -1346,8 +1346,8 @@
   margin-top: 2px;
 }
 
-/* Nexora Side */
-.comparisonCardNexora {
+/* PrivVault Side */
+.comparisonCardPrivVault {
   border-radius: 20px;
   border: 1px solid rgba(56, 189, 248, 0.3);
   background: linear-gradient(180deg, rgba(14, 22, 34, 0.6) 0%, rgba(9, 13, 20, 0.75) 100%);
@@ -1357,7 +1357,7 @@
   box-shadow: 0 16px 50px rgba(56, 189, 248, 0.06);
 }
 
-.cardBadgeNexora {
+.cardBadgePrivVault {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1373,21 +1373,21 @@
   margin-bottom: 20px;
 }
 
-.comparisonHeadingNexora {
+.comparisonHeadingPrivVault {
   font-size: 22px;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 10px 0;
 }
 
-.comparisonDescNexora {
+.comparisonDescPrivVault {
   font-size: 14px;
   color: var(--nx-text-secondary);
   line-height: 1.55;
   margin: 0 0 28px 0;
 }
 
-.pipelineIllustrationNexora {
+.pipelineIllustrationPrivVault {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1398,36 +1398,36 @@
   border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
-.pipelineStepNexora {
+.pipelineStepPrivVault {
   flex: 1;
 }
 
-.stepNumNexora {
+.stepNumPrivVault {
   font-family: var(--font-mono);
   font-size: 10px;
   color: var(--nx-accent-cyan);
   font-weight: 600;
 }
 
-.stepContentNexora strong {
+.stepContentPrivVault strong {
   display: block;
   font-size: 12px;
   color: #ffffff;
   margin: 2px 0;
 }
 
-.stepContentNexora p {
+.stepContentPrivVault p {
   font-size: 11px;
   color: var(--nx-text-secondary);
   margin: 0;
   line-height: 1.35;
 }
 
-.arrowBetweenNexora {
+.arrowBetweenPrivVault {
   color: var(--nx-accent-cyan);
 }
 
-.nexoraPerks {
+.PrivVaultPerks {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -2665,7 +2665,7 @@
   margin-bottom: 2px;
 }
 
-.compRowNexora {
+.compRowPrivVault {
   font-size: 12px;
   color: #ffffff;
 }
@@ -3601,7 +3601,7 @@
   width: 25%;
 }
 
-.thNexora {
+.thPrivVault {
   font-size: 13px;
   font-weight: 700;
   color: var(--nx-accent-cyan);
@@ -3624,11 +3624,11 @@
   color: var(--nx-text-secondary);
 }
 
-.tdNexora {
+.tdPrivVault {
   background: rgba(56, 189, 248, 0.03);
 }
 
-.nexoraValWrap {
+.PrivVaultValWrap {
   display: flex;
   align-items: center;
   gap: 8px;

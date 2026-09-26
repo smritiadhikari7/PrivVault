@@ -14,7 +14,7 @@ const midnightPillars = [
     icon: Code2,
     title: "Compact Programming Language",
     description:
-      "Smart contracts in Nexora are authored in Compact — a language designed from the ground up for verifiable private computation and zero-knowledge circuits.",
+      "Smart contracts in PrivVault are authored in Compact — a language designed from the ground up for verifiable private computation and zero-knowledge circuits.",
   },
   {
     icon: Lock,
@@ -26,7 +26,7 @@ const midnightPillars = [
     icon: Globe2,
     title: "Preprod Network Deployment",
     description:
-      "Nexora's access control gateway is live and verifiable on the public Midnight Preprod testnet with verified contract execution.",
+      "PrivVault's access control gateway is live and verifiable on the public Midnight Preprod testnet with verified contract execution.",
   },
 ];
 
@@ -43,7 +43,7 @@ export function MidnightEcosystem() {
           <span className={styles.highlightText}>The blockchain for data protection.</span>
         </h2>
         <p className={styles.sectionLead}>
-          Nexora leverages Midnight&apos;s native zero-knowledge engine to build verifiable credentials without identity leakage.
+          PrivVault leverages Midnight&apos;s native zero-knowledge engine to build verifiable credentials without identity leakage.
         </p>
       </div>
 
