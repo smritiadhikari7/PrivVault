@@ -1,38 +1,16 @@
 {
-  "name": "midnight-vault",
-  "version": "1.0.0",
-  "description": "Privacy-preserving identity verification platform using Midnight Compact",
-  "main": "dist/index.js",
-  "scripts": {
-    "dev": "npm run dev --prefix Frontend",
-    "build": "tsc",
-    "build:frontend": "npm run build --prefix Frontend",
-    "compile": "ts-node scripts/compile.ts",
-    "test": "jest",
-    "clean": "rm -rf dist coverage managed/*"
-  },
-  "keywords": [
-    "midnight",
-    "compact",
-    "zk",
-    "privacy"
+  "name": "midnight-vault-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "contracts",
+    "app"
   ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@midnight-ntwrk/compact-runtime": "^0.16.0",
-    "@midnight-ntwrk/midnight-js-contracts": "^3.0.0",
-    "@midnight-ntwrk/midnight-js-network-id": "^3.0.0",
-    "@midnight-ntwrk/midnight-js-types": "^3.0.0",
-    "dotenv": "^16.4.5"
-  },
-  "devDependencies": {
-    "@midnight-ntwrk/testkit-js": "^4.1.1",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^22.0.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.3"
+  "scripts": {
+    "dev": "npm run dev --workspace=app",
+    "build": "npm run build --workspace=app",
+    "start": "npm run start --workspace=app",
+    "test": "npm run test --workspace=contracts",
+    "lint": "npm run lint --workspace=app"
   }
 }
