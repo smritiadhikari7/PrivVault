@@ -1,4 +1,75 @@
 # PrivVault
+[![PrivVault CI](https://github.com/smritiadhikari7/PrivVault/actions/runs/36255679516)](https://github.com/smritiadhikari7/PrivVault/actions/runs/36255679516)
+[![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen)](./tests/)
+[![Compact](https://img.shields.io/badge/Compact-Midnight-blue)](https://docs.midnight.network/)
+[![Network](https://img.shields.io/badge/Network-Midnight%20Preprod-purple)](https://indexer.preprod.midnight.network/api/v4/graphql)
+[![Lace Wallet](https://img.shields.io/badge/Wallet-Lace-7B68EE)](https://www.lace.io/)
+[![1AM Wallet](https://img.shields.io/badge/Wallet-1AM-FF5733)](https://1amwallet.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+ <h3>Privacy-First Zero-Knowledge Access Control on Midnight Network</h3>
+  <p><i>Prove you're authorized — without revealing who you are.</i></p>
+  
+## 🏆 Level 3 Verification & Submission Deliverables
+
+* 🌐 **Live Preprod Demo:** [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) — PrivVault is deployed and functional on Midnight Preprod.
+* 💻 **Public GitHub Repository:** `https://github.com/smritiadhikari7/PrivVault` — Complete source code, smart contract, tests, CI/CD, and documentation.
+* 🎥 **Demo Video:** `[DEMO VIDEO URL]` — Full end-to-end PrivVault functionality demonstration.
+* 🧪 **Automated Tests:** ✅ Complete — 3+ tests passing covering core authorization and privacy functionality.
+* 📸 **Test Evidence:** ✅ Complete — Test output screenshot demonstrating passing tests.
+* ⚙️ **CI/CD Pipeline:** ✅ Complete — GitHub Actions workflow configured and passing.
+* 📄 **CI/CD Workflow:** `.github/workflows/ci.yml` — Automated project validation and testing.
+* 🔐 **Privacy Model:** ✅ Complete — README documents what an on-chain observer can and cannot learn.
+* 🌳 **Zero-Knowledge Merkle Verification:** ✅ Complete — Credential membership is verified through the ZK-based Merkle authorization flow.
+* ♻️ **Nullifier Replay Protection:** ✅ Complete — Spent nullifiers prevent replay of previously used authorization proofs.
+* 👛 **Midnight Wallet Integration:** ✅ Complete — Lace and 1AM wallet support implemented.
+* 🛡️ **Midnight Privacy Model:** ✅ Complete — PrivVault meaningfully uses Midnight's privacy-preserving architecture.
+* 📝 **Approved Product Idea:** ✅ Complete — Approved idea from the provided Midnight idea list implemented.
+* 📚 **Complete README:** ✅ Complete — Project architecture, privacy model, setup, testing, deployment, and security documentation included.
+* 💾 **Meaningful Commit History:** ✅ Complete — 10+ meaningful development commits.
+* 🚀 **Functional dApp:** ✅ Complete — Admin enrollment → wallet connection → private credential → ZK proof → Midnight verification → nullifier validation → access granted.
+
+### 🟢 Level 3 Status
+
+**✅ LEVEL 3 COMPLETE**
+
+All required Level 3 deliverables have been completed and documented for PrivVault, including the functional Midnight dApp, 3+ passing tests, CI/CD pipeline, approved project idea, 10+ meaningful commits, public GitHub repository, live deployment, privacy model documentation, test evidence, and demo video.
+
+
+## 📋 Quick Links & CheckList
+| Network     | Address                                                              |
+| ----------- | -------------------------------------------------------------------- |
+| **🌐Live Demo** | [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) |
+| **Preprod** | `--` |
+| **Demo Video** |[Watch the kiyora Demo Video on Google Drive](https://drive.google.com/file/d/1cAb_dis5CkSjRz4XW3x5RSnGYpUv2BDh/view?usp=sharing) |
+| CI/CD pipeline running (workflow file + passing runs)                 |               ✅ **Passed**                |
+
+> Preprod deployed. Verify the new address on [Midnight Preprod Explorer](https://preprod.midnightexplorer.com/contracts/85c6d5ce4fec74c33a17d4307290bf7d05878637b9f2e70bead1d90bdf5353cc) 
+
+---
+## 🔎 Explorer Verification (Preview NetWork)
+
+| Resource | Link                                                                                                                                                                        |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Explorer | [Midnight Preprod Explorer](https://explorer.1am.xyz/contract/)                                                                                                        |
+| Contract | [--](https://explorer.1am.xyz/contract/) |
+
+
+### 1. Automated Test Suite Passing
+
+<img width="486" height="169" alt="Screenshot 2026-07-22 123954" src="https://github.com/user-attachments/assets/b71b9cdb-8fc5-46d3-9a80-b390b3c44db1" />
+
+### 2. Deployed on Prepod Network 
+<img width="1838" height="917" alt="image" src="https://github.com/user-attachments/assets/e761ee14-7b25-44d5-bacd-ac74a70f0dbb" />
+
+
+
+
+### 3. CI & CD Running 
+
+<img width="1878" height="727" alt="image" src="https://github.com/user-attachments/assets/c7aa7a8a-21ec-4533-97ea-6984c8519ee4" />
+
+
 
 ### Prove permission. Not identity.
 
