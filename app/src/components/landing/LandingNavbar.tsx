@@ -10,12 +10,10 @@ import type { WalletOption } from "@/lib/midnight-client";
 import styles from "./Landing.module.css";
 
 const navLinks = [
-  { href: "#product", label: "Product" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#interactive-demo", label: "ZK Demo" },
-  { href: "#technology", label: "Technology" },
-  { href: "#use-cases", label: "Use Cases" },
+  { href: "#product", label: "Locations" },
+  { href: "#how-it-works", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
+  { href: "/gate", label: "Contact" },
 ];
 
 export function LandingNavbar() {
@@ -129,8 +127,7 @@ export function LandingNavbar() {
             </button>
 
             <Link href="/gate" className={styles.navLaunchBtn}>
-              <span>Launch App</span>
-              <ArrowRight size={14} />
+              <span>Get early access</span>
             </Link>
 
             {/* Mobile Hamburger Toggle */}
