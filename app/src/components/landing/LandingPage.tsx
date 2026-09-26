@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { Search } from "lucide-react";
+import Link from "next/link";
 import { LandingNavbar } from "./LandingNavbar";
 import { ProblemComparison } from "./ProblemComparison";
 import { CoreCapabilities } from "./CoreCapabilities";
@@ -21,24 +19,17 @@ import { FinalCta } from "./FinalCta";
 import { LandingFooter } from "./LandingFooter";
 import styles from "./Landing.module.css";
 
+const ecosystemItems = [
+  { name: "Midnight", glyph: "◐" },
+  { name: "Compact DSL", glyph: "◈" },
+  { name: "zk-SNARKs", glyph: "π" },
+  { name: "Lace Wallet", glyph: "◇" },
+  { name: "1AM Wallet", glyph: "⏱" },
+  { name: "Preprod", glyph: "◎" },
+  { name: "Apache-2.0", glyph: "§" },
+];
+
 export function LandingPage() {
-  const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/gate?q=${encodeURIComponent(searchQuery.trim())}`);
-    } else {
-      router.push("/gate");
-    }
-  };
-
-  const handleQuickSearch = (term: string) => {
-    setSearchQuery(term);
-    router.push(`/gate?q=${encodeURIComponent(term)}`);
-  };
-
   return (
     <div className={styles.landingShell}>
       {/* Precision Ambient Film Grain */}
@@ -48,105 +39,79 @@ export function LandingPage() {
       <LandingNavbar />
 
       <main className={styles.mainContent}>
-        {/* HERO SECTION - EXACT REPLICA OF REFERENCE DESIGN WITH HERO-VAULT.PNG BACKGROUND */}
-        <section className={styles.escapeHeroSection}>
-          {/* Full-Bleed Background using hero-vault.png */}
-          <div className={styles.escapeBgWrap}>
+        {/* HERO SECTION - REFINED CINEMATIC PRIVVAULT SANCTUARY */}
+        <section className={styles.privHeroSection}>
+          {/* Hero Background Image */}
+          <div className={styles.privHeroBgCanvas} aria-hidden="true">
             <Image
-              src="/hero-vault.png"
-              alt="PrivVault Sanctuary Portal - Hero Background"
+              src="/Hero_Image.png"
+              alt="PrivVault Sanctuary Portal"
               fill
               priority
-              quality={95}
-              className={styles.escapeBgImage}
+              quality={100}
+              className={styles.privHeroBackdropImg}
             />
-            {/* Luminous warm mist at top + gradual dark fade into page at bottom */}
-            <div className={styles.escapeAtmosphereOverlay} />
-            <div className={styles.escapeBottomGradient} />
+            {/* Subtle bottom fade to seamlessly transition into the dark page */}
+            <div className={styles.privHeroBottomFade} />
           </div>
 
-          <div className={styles.escapeHeroContent}>
-            {/* Eyebrow Pill Badge (Exact replica of: 🏛 Voted best peaceful place in the world) */}
-            <div className={styles.escapeEyebrowPill}>
-              <span className={styles.escapeEyebrowIcon}>🏛</span>
-              <span className={styles.escapeEyebrowText}>
-                Voted best peaceful place in the world
-              </span>
+          {/* Hero Content */}
+          <div className={styles.privHeroContent}>
+            {/* Eyebrow */}
+            <div className={styles.privEyebrowWrap}>
+              <span className={styles.privEyebrowDot} />
+              <span className={styles.privEyebrowText}>PRIVVAULT</span>
+              <span className={styles.privEyebrowDivider}>/</span>
+              <span className={styles.privEyebrowBadge}>ZERO-KNOWLEDGE PRIVACY</span>
             </div>
 
-            {/* Headline (Exact replica of: The best place to find your Inner Peace) */}
-            <h1 className={styles.escapeHeadline}>
-              The best place to find<br />
-              your <span className={styles.escapeSerifAccent}>Inner Peace</span>
+            {/* Main Heading */}
+            <h1 className={styles.privHeadline}>
+              <span className={styles.privHeadlineLine1}>Prove permission.</span>
+              <span className={styles.privHeadlineLine2}>Not identity.</span>
             </h1>
 
-            {/* Subtitle (Exact replica of: Feeling ready to relax ? Find the best location to reconnect with nature and find inner calm.) */}
-            <p className={styles.escapeSubtitle}>
-              Feeling ready to relax ? Find the best location to reconnect with nature and find inner calm.
+            {/* Supporting Paragraph */}
+            <p className={styles.privParagraph}>
+              PrivVault enables privacy-preserving credential verification with zero-knowledge proofs &mdash; letting users prove what they qualify for without exposing unnecessary personal information.
             </p>
 
-            {/* Search Bar (Exact replica of: Search for a location... [ Search Now ]) */}
-            <form onSubmit={handleSearchSubmit} className={styles.escapeSearchBar}>
-              <div className={styles.escapeSearchInputWrap}>
-                <Search size={18} className={styles.escapeSearchIcon} />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for a location..."
-                  className={styles.escapeSearchInput}
-                  aria-label="Search for a location"
-                />
-              </div>
-              <button type="submit" className={styles.escapeSearchBtn}>
-                <span>Search Now</span>
-              </button>
-            </form>
+            {/* CTA Buttons Row */}
+            <div className={styles.privCtaRow}>
+              <Link href="/gate" className={styles.privPrimaryBtn}>
+                <span className={styles.privBtnText}>Launch PrivVault</span>
+                <span className={styles.privBtnIconCircle}>
+                  <span className={styles.privBtnArrow}>↗</span>
+                </span>
+              </Link>
 
-            {/* Quick Suggestion Chips */}
-            <div className={styles.escapeSuggestionChips}>
-              <span className={styles.suggestionLabel}>Popular:</span>
-              <button
-                type="button"
-                onClick={() => handleQuickSearch("Alpine Sanctuary")}
-                className={styles.suggestionChip}
-              >
-                Alpine Sanctuary
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickSearch("Lake Meadow")}
-                className={styles.suggestionChip}
-              >
-                Lake Meadow
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickSearch("Forest Retreat")}
-                className={styles.suggestionChip}
-              >
-                Forest Retreat
-              </button>
-              <button
-                type="button"
-                onClick={() => handleQuickSearch("Mountain Valley")}
-                className={styles.suggestionChip}
-              >
-                Mountain Valley
-              </button>
+              <a href="#how-it-works" className={styles.privSecondaryBtn}>
+                <span>How it works</span>
+                <span className={styles.privSecondaryArrow}>↗</span>
+              </a>
+
+              <Link href="/admin" className={styles.privConsoleLink} title="Operator & Issuer Console">
+                <span>Issuer Console</span>
+                <span className={styles.privConsoleArrow}>↗</span>
+              </Link>
             </div>
-          </div>
 
-          {/* Bottom Social Proof / Brand Logos (Exact replica of: Featured as the safest place to go in / Forbes, Men'sHealth, Bloomberg, The Washington Post) */}
-          <div className={styles.escapeBottomProofBlock}>
-            <p className={styles.escapeProofCaption}>
-              Featured as the safest place to go in
-            </p>
-            <div className={styles.escapeLogosRow}>
-              <span className={styles.logoItemForbes}>Forbes</span>
-              <span className={styles.logoItemMensHealth}>Men’sHealth</span>
-              <span className={styles.logoItemBloomberg}>Bloomberg</span>
-              <span className={styles.logoItemWashPost}>The Washington Post</span>
+            {/* Technology & Trust Strip */}
+            <div className={styles.privTechStripBlock}>
+              <div className={styles.privTechStripHeader}>
+                <span className={styles.privTechHairline} />
+                <span className={styles.privTechHeading}>BUILT WITH PRIVACY-FIRST INFRASTRUCTURE</span>
+                <span className={styles.privTechHairline} />
+              </div>
+
+              <div className={styles.privTechMarquee}>
+                {ecosystemItems.map((item) => (
+                  <div key={item.name} className={styles.privTechBadge}>
+                    <span className={styles.privTechGlyph}>{item.glyph}</span>
+                    <span className={styles.privTechName}>{item.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
