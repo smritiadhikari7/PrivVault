@@ -1,5 +1,5 @@
 import { CompiledContract } from '@midnight-ntwrk/compact-js';
-import * as VaultContractModule from '../../../contracts/managed/Vault/contract/index.js';
+import * as VaultContractModule from '../managed/Vault/contract/index.js';
 import { persistentHash, CompactTypeVector, CompactTypeBytes, convertFieldToBytes } from '@midnight-ntwrk/compact-runtime';
 
 export { getIssuerId, getUserId, getCredentialCommitment } from './credential-derivation';
