@@ -14,7 +14,7 @@
 
 * 🌐 **Live Preprod Demo:** [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) — PrivVault is deployed and functional on Midnight Preprod.
 * 💻 **Public GitHub Repository:** `https://github.com/smritiadhikari7/PrivVault` — Complete source code, smart contract, tests, CI/CD, and documentation.
-* 🎥 **Demo Video:** `[DEMO VIDEO URL]` — Full end-to-end PrivVault functionality demonstration.
+* 🎥 **Demo Video:** [Live Demo Video](https://drive.google.com/file/d/1iwnR7u92_BdbVkk4K1nVdmV2Si-QmfYj/view) — Full end-to-end PrivVault functionality demonstration.
 * 🧪 **Automated Tests:** ✅ Complete — 3+ tests passing covering core authorization and privacy functionality.
 * 📸 **Test Evidence:** ✅ Complete — Test output screenshot demonstrating passing tests.
 * ⚙️ **CI/CD Pipeline:** ✅ Complete — GitHub Actions workflow configured and passing.
@@ -40,19 +40,19 @@ All required Level 3 deliverables have been completed and documented for PrivVau
 | Network     | Address                                                              |
 | ----------- | -------------------------------------------------------------------- |
 | **🌐Live Demo** | [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) |
-| **Preprod** | `--` |
-| **Demo Video** |[Watch the kiyora Demo Video on Google Drive](https://drive.google.com/file/d/1cAb_dis5CkSjRz4XW3x5RSnGYpUv2BDh/view?usp=sharing) |
+| **Preprod** | `0xa010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf` |
+| **Demo Video** |[Watch the PrivVault Demo Video on Google Drive](https://drive.google.com/file/d/1iwnR7u92_BdbVkk4K1nVdmV2Si-QmfYj/view) |
 | CI/CD pipeline running (workflow file + passing runs)                 |               ✅ **Passed**                |
 
-> Preprod deployed. Verify the new address on [Midnight Preprod Explorer](https://preprod.midnightexplorer.com/contracts/85c6d5ce4fec74c33a17d4307290bf7d05878637b9f2e70bead1d90bdf5353cc) 
+> Preprod deployed. Verify the new address on [Midnight Preprod Explorer](https://explorer.1am.xyz/contract/a010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf?network=preprod) 
 
 ---
 ## 🔎 Explorer Verification (Preview NetWork)
 
 | Resource | Link                                                                                                                                                                        |
 | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Explorer | [Midnight Preprod Explorer](https://explorer.1am.xyz/contract/)                                                                                                        |
-| Contract | [--](https://explorer.1am.xyz/contract/) |
+| Explorer | [Midnight Preprod Explorer](https://explorer.1am.xyz/contract/a010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf?network=preprod)                                                                                                        |
+| Contract | [0xa010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf](https://explorer.1am.xyz/contract/a010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf?network=preprod) |
 
 
 ### 1. Automated Test Suite Passing
