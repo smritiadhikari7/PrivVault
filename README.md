@@ -60,7 +60,8 @@ All required Level 3 deliverables have been completed and documented for PrivVau
 <img width="486" height="169" alt="Screenshot 2026-07-22 123954" src="https://github.com/user-attachments/assets/b71b9cdb-8fc5-46d3-9a80-b390b3c44db1" />
 
 ### 2. Deployed on Prepod Network 
-<img width="1838" height="917" alt="image" src="https://github.com/user-attachments/assets/e761ee14-7b25-44d5-bacd-ac74a70f0dbb" />
+<img width="1817" height="913" alt="image" src="https://github.com/user-attachments/assets/65cdbe26-8582-4b4e-bcb5-a4e48a002445" />
+
 
 
 
