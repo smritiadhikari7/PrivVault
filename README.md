@@ -9,7 +9,34 @@
 
  <h3>Privacy-First Zero-Knowledge Access Control on Midnight Network</h3>
   <p><i>Prove you're authorized — without revealing who you are.</i></p>
-  
+
+## 🏆 Level 4 Verification & Submission Deliverables
+
+- **Live Preprod Demo:** [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) *(Working PrivVault MVP deployed on Midnight Preprod)*
+- **GitHub Repository:** [https://github.com/smritiadhikari7/PrivVault](https://github.com/smritiadhikari7/PrivVault) *(Public repository with source code, README, setup, usage, and project documentation)*
+- **Product X (Twitter):** [@PrivVaultWeb3](https://x.com/PrivVaultWeb3) *(Official PrivVault X Profile · Product Updates & Community Outreach)*
+- **Demo Video:** [Watch the PrivVault Demo](https://drive.google.com/file/d/1iwnR7u92_BdbVkk4K1nVdmV2Si-QmfYj/view) *(End-to-end MVP demonstration)*
+- **Contract Address:** `0xa010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf`
+- **Preprod Contract Explorer:** [View PrivVault Contract](https://explorer.1am.xyz/contract/a010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf?network=preprod) *(Verifiable Midnight Preprod contract address)*
+- **Documentation:** [README.md](https://github.com/smritiadhikari7/PrivVault/blob/main/README.md) *(Project overview, setup, usage, architecture, and deployment documentation)*
+- **CI/CD Pipeline:** [GitHub Actions Workflow](https://github.com/smritiadhikari7/PrivVault/blob/main/.github/workflows/ci.yml) *(Automated CI/CD workflow with passing runs)*
+- **Product X Linked in README:** ✅ Complete — Official PrivVault X profile linked in the public repository
+- **Meaningful Commit History:** ✅ Complete — **15+ meaningful development commits**
+- **Building in Public:** ✅ Complete — Public GitHub repository and official Product X profile established for ongoing product development and community updates.
+
+## 📋 Quick Submission Checklist
+
+| **Requirement** | **PrivVault Evidence** |
+| ------------------------------------------------ | ------------------------------------------------ |
+| Working MVP live on Preprod | ✅ [Live Demo](https://privvaultweb3.vercel.app/) |
+| Verifiable contract address | ✅ `0xa010b7f3db0633fe52c0b6bfc5e014ed568cd8c51b0109f11453a58bc746fccf` |
+| README + setup + usage | ✅ [README](https://github.com/smritiadhikari7/PrivVault/blob/main/README.md) |
+| CI/CD pipeline | ✅ [GitHub Actions](https://github.com/smritiadhikari7/PrivVault/blob/main/.github/workflows/ci.yml) |
+| Product X profile | ✅ [@PrivVaultWeb3](https://x.com/PrivVaultWeb3) |
+| X linked in README | ✅ Complete |
+| Demo video | ✅ [Google Drive Demo](https://drive.google.com/file/d/1iwnR7u92_BdbVkk4K1nVdmV2Si-QmfYj/view) |
+| Minimum 15 meaningful commits | ✅ 15+ |
+| Public GitHub repository | ✅ [smritiadhikari7/PrivVault](https://github.com/smritiadhikari7/PrivVault) |
 ## 🏆 Level 4 Verification & Submission Deliverables
 
 * 🌐 **Live Preprod Demo:** [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) — PrivVault is deployed and functional on Midnight Preprod.
