@@ -10,11 +10,12 @@
  <h3>Privacy-First Zero-Knowledge Access Control on Midnight Network</h3>
   <p><i>Prove you're authorized — without revealing who you are.</i></p>
   
-## 🏆 Level 3 Verification & Submission Deliverables
+## 🏆 Level 4 Verification & Submission Deliverables
 
 * 🌐 **Live Preprod Demo:** [https://privvaultweb3.vercel.app/](https://privvaultweb3.vercel.app/) — PrivVault is deployed and functional on Midnight Preprod.
 * 💻 **Public GitHub Repository:** `https://github.com/smritiadhikari7/PrivVault` — Complete source code, smart contract, tests, CI/CD, and documentation.
 * 🎥 **Demo Video:** [Live Demo Video](https://drive.google.com/file/d/1iwnR7u92_BdbVkk4K1nVdmV2Si-QmfYj/view) — Full end-to-end PrivVault functionality demonstration.
+* Product X (Twitter): @PrivVaultWeb3 (Official PrivVault X Profile · Product Updates & Community Outreach)
 * 🧪 **Automated Tests:** ✅ Complete — 3+ tests passing covering core authorization and privacy functionality.
 * 📸 **Test Evidence:** ✅ Complete — Test output screenshot demonstrating passing tests.
 * ⚙️ **CI/CD Pipeline:** ✅ Complete — GitHub Actions workflow configured and passing.
@@ -29,11 +30,7 @@
 * 💾 **Meaningful Commit History:** ✅ Complete — 10+ meaningful development commits.
 * 🚀 **Functional dApp:** ✅ Complete — Admin enrollment → wallet connection → private credential → ZK proof → Midnight verification → nullifier validation → access granted.
 
-### 🟢 Level 3 Status
-
-**✅ LEVEL 3 COMPLETE**
-
-All required Level 3 deliverables have been completed and documented for PrivVault, including the functional Midnight dApp, 3+ passing tests, CI/CD pipeline, approved project idea, 10+ meaningful commits, public GitHub repository, live deployment, privacy model documentation, test evidence, and demo video.
+ public GitHub repository, live deployment, privacy model documentation, test evidence, and demo video.
 
 
 ## 📋 Quick Links & CheckList
